@@ -13,7 +13,7 @@ const imgApi = axios.create({
 export default class ImageService {
 	getImage(_drawImg) {
 		// ^^^^^^^ How do you call this function?
-		let randomNum = Math.floor((Math.random() * 41) + 1)
+		let randomNum = Math.floor((Math.random() * 40) + 1)
 
 
 		imgApi.get().then(res => {

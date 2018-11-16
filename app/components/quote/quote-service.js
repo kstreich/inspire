@@ -11,18 +11,21 @@ const quoteApi = axios.create({
 });
 
 
-
+function _handleError(err) {
+	throw new Error(err)
+}
 
 export default class QuoteService {
 
 	getQuote(callWhenDone) {
 		console.log('looking for some good quotes')
 
-		quoteApi().then((res) => {
-			console.log("Quote data :", res.data.quote)
-			callWhenDone(res.data)
+		quoteApi.get().then(res => {
+			let quoteBody = res.data.quote.body
+			let quoteAuthor = res.data.quote.author
+			callWhenDone(quoteBody, quoteAuthor)
 		})
+			.catch(_handleError)
 	}
-
 
 }

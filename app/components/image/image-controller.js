@@ -5,13 +5,12 @@ import ImageService from "./image-service.js";
 let _imageService = new ImageService()
 
 function _drawImg(imgUrl) {
-
   document.getElementById('body').style.backgroundImage = `url(${imgUrl})`;
 }
 
 
 
-
+// public
 export default class ImageController {
   constructor() {
     _imageService.getImage(_drawImg)
