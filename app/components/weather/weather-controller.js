@@ -7,9 +7,10 @@ function _drawWeather(weatherData) {
 		`
 		<div class= "card">
 			<div class= "card-body>
-				<h5 class="card-title">${weatherData.name}</h5>
-				<h5>${weatherData.temp}</h5>
-				<p class="card-text">High:${weatherData.tempHigh} - Low:${weatherData.tempLow}</p>
+				<h5 class="card-title">${weatherData.name} </h5>
+				<h5>${weatherData.temp}F</h5><img src="${weatherData.icon}"><
+				
+				<p class="card-text">High:${weatherData.tempHigh}F - Low:${weatherData.tempLow}F</p>
 			</div>
 		</div>
 		`

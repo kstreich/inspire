@@ -1,5 +1,3 @@
-
-
 const todoApi = axios.create({
 	baseURL: 'https://bcw-sandbox.herokuapp.com/api/kim/todos/',
 	timeout: 3000
@@ -10,29 +8,35 @@ function logError(e) {
 }
 
 
-let todoList = []
+let todoList = [] //my list array
 
 export default class TodoService {
+
+	get todoList() {
+		return todoList
+	}
 
 	getTodos(draw) {
 		console.log("Getting the Todo List")
 		todoApi.get('')
 			.then((res) => { // <-- WHY IS THIS IMPORTANT????
-
+				console.log(res.data.data)
+				todoList = res.data.data
+				draw()
 			})
 			.catch(logError)
 	}
 
-	addTodo(todo) {
+	addTodo(formData, fnToRun) {
 		// WHAT IS THIS FOR???
-		todoApi.post('', todo)
-			.then(function (res) { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
-
+		todoApi.post('https://bcw-sandbox.herokuapp.com/api/kim/todos', formData)
+			.then((res) => { // <-- WHAT DO YOU DO AFTER CREATING
+				fnToRun()
 			})
 			.catch(logError)
 	}
 
-	toggleTodoStatus(todoId) {
+	toggleTodoStatus(todoId, getTodos) {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		//STEP 1: Find the todo by its index **HINT** todoList
 

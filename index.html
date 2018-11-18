@@ -17,11 +17,17 @@
 	</div>
 
 	<div id="todo">
-		<form onsubmit=""></form>
-		A Todo List
+		<h1>A Todo List</h1>
+
+
 	</div>
-
-
+	<div id="todoPrac" class="card">
+		<h3 class="card-title">Today's to do's</h3>
+		<form class="card-body" onsubmit="">
+			<input type="text" name="todo">
+			<button onclick="app.controllers.todoController.addTodoFromForm(event)">Submit</button>
+		</form>
+	</div>
 
 
 	<!--JS Libraries-->
