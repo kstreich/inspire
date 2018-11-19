@@ -16,20 +16,18 @@ function draw() {
 	let list = todoService.todoList
 	let template = ""
 	list.forEach(element => {
+		console.log(element)
 		template += `
-    <div class="form-check">
+		<div class="form-check">
   		<label class="form-check-label">
-   	 <input class="form-check-input" type="checkbox" value=""> ${list}
-  	</label>
+				<input class="form-check-input" type="checkbox" ${element.completed ? "checked" : ""} onchange="app.controllers.todoController.toggleTodoStatus('${element._id}')" value="checked"> ${element.description}
+				<button onclick="app.controllers.todoController.removeTodo('${element._id}')"> Delete </button>
+		</label>
 	</div>
-	<ul class="list-group">
-  <li class="list-group-item">${list}</li>
-</ul>
     `
 	})
 	document.getElementById("todo").innerHTML = template
 }
-
 // **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
 export default class TodoController {
 	constructor() {
@@ -50,21 +48,19 @@ export default class TodoController {
 		todoService.addTodo(formData, getTodos)
 		//^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
 	}
-
 	toggleTodoStatus(todoId) {
+		console.log(todoId)
 		// toggleTodoStatus takes in a todo marks its status as completed and puts it to the server
 		// asks the service to edit the todo status
+
 		todoService.toggleTodoStatus(todoId, getTodos)
 		// YEP THATS IT FOR ME
 	}
-
 	removeTodo(todoId) {
 		// removeTodo takes in a todoId and sends a delete request to the server
 		// ask the service to run the remove todo with this id
 
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
-
-
 
 }

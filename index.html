@@ -16,18 +16,20 @@
 		The Quote
 	</div>
 
-
-	<h3>To Do</h3>
-	<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-		<div class="form-group">
-			<input type="text" name="todo">
-			<button type="submit">Add</button>
-		</div>
-	</form>
-
-
-	<div id="todo">
+	<div class="card todoCard">
+		<h3>To Do</h3>
+		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+			<div class="form-group">
+				<input type="text" name="todo">
+				<button type="submit">Add</button>
+				<div id="todo">
+				</div>
+			</div>
+		</form>
 	</div>
+
+
+
 
 
 
