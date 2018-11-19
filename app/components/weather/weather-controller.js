@@ -5,10 +5,10 @@ let _weatherService = new WeatherService()
 function _drawWeather(weatherData) {
 	document.getElementById("weather").innerHTML =
 		`
-		<div class= "card">
+		<div class= "card text-center weather">
 			<div class= "card-body>
 				<h5 class="card-title">${weatherData.name} </h5>
-				<h5>${weatherData.temp}F</h5><img src="${weatherData.icon}"><
+				<h5>${weatherData.temp}F</h5><img src="${weatherData.icon}">
 				
 				<p class="card-text">High:${weatherData.tempHigh}F - Low:${weatherData.tempLow}F</p>
 			</div>

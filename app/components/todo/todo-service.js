@@ -1,3 +1,5 @@
+import ToDo from "../../models/todo.js";
+
 const todoApi = axios.create({
 	baseURL: 'https://bcw-sandbox.herokuapp.com/api/kim/todos/',
 	timeout: 3000
@@ -20,18 +22,18 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get('')
 			.then((res) => { // <-- WHY IS THIS IMPORTANT????
-				console.log(res.data.data)
-				todoList = res.data.data
-				draw()
+				todoList = res.data
+				console.log(todoList)
+
 			})
 			.catch(logError)
 	}
 
-	addTodo(formData, fnToRun) {
+	addTodo(formData, getTodos) {
 		// WHAT IS THIS FOR???
-		todoApi.post('https://bcw-sandbox.herokuapp.com/api/kim/todos', formData)
+		todoApi.post('', formData)
 			.then((res) => { // <-- WHAT DO YOU DO AFTER CREATING
-				fnToRun()
+				this.getTodos(getTodos)
 			})
 			.catch(logError)
 	}
