@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Inspire</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+	 crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -12,27 +14,21 @@
 		Your Weather Template
 	</div>
 
-	<div id="quote">
-		The Quote
-	</div>
-
 	<div class="card todoCard">
 		<h3>To Do</h3>
 		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
 			<div class="form-group">
 				<input type="text" name="todo">
 				<button type="submit">Add</button>
-				<div id="todo">
-				</div>
 			</div>
 		</form>
+		<div id="todo">
+		</div>
 	</div>
 
-
-
-
-
-
+	<div id="quote">
+		The Quote
+	</div>
 
 	<!--JS Libraries-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>

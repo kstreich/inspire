@@ -1,5 +1,6 @@
 import ToDo from "../../models/todo.js";
 
+// @ts-ignore
 const todoApi = axios.create({
 	baseURL: 'https://bcw-sandbox.herokuapp.com/api/kim/todos/',
 	timeout: 3000
@@ -23,8 +24,7 @@ export default class TodoService {
 		todoApi.get('')
 			.then((res) => { // <-- WHY IS THIS IMPORTANT????
 				todoList = res.data.data
-				draw()
-
+				draw(todoList)
 			})
 			.catch(logError)
 	}
@@ -53,9 +53,15 @@ export default class TodoService {
 			.catch(logError)
 	}
 
-	removeTodo() {
+	removeTodo(todoId, getTodos) {
 		// Umm this one is on you to write.... The method is a DELETE
+		// let todo = todoList.find(t => t._id == todoId)
+		// if you want to delete a todo ONLY when it has been completed, use if statment to check if todo is not completed => if not, pop up modal or other notification that will prevent delete request and allow it only when it HAS BEEN completed.
 
+		todoApi.delete(todoId)
+			.then(res => {
+				getTodos()
+			})
 	}
 
 }

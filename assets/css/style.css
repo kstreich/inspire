@@ -1,7 +1,14 @@
 .weather {
   width: 8rem;
+  
 }
 
 .todoCard {
   width: 16rem;
+}
+
+.quotes-section{
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  margin-top: 40vh;
 }

@@ -4,9 +4,9 @@ let _qs = new QuoteService
 
 function _drawQuote(quoteBody, quoteAuthor) {
 	document.getElementById("quote").innerHTML = `
-		<div class= "jumbotron">
-			<div class="row"> 	
-				<h3>${quoteBody}</h3>
+		<div class= "container quotes-section">
+			<div class="row-quote"> 	
+				<p>${quoteBody}</p>
 				<p>${quoteAuthor}</p>
 			</div>
 		</div>
