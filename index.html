@@ -18,13 +18,15 @@
 
 
 	<h3>To Do</h3>
-	<div class="form-group">
-		<input type="text" name="todo">
-		<button type="submit">Add</button>
-	</div>
+	<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+		<div class="form-group">
+			<input type="text" name="todo">
+			<button type="submit">Add</button>
+		</div>
+	</form>
+
+
 	<div id="todo">
-		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-		</form>
 	</div>
 
 

@@ -23,7 +23,7 @@ export default class TodoService {
 		todoApi.get('')
 			.then((res) => { // <-- WHY IS THIS IMPORTANT????
 				todoList = res.data
-				console.log(todoList)
+				draw(todoList)
 
 			})
 			.catch(logError)
@@ -33,7 +33,7 @@ export default class TodoService {
 		// WHAT IS THIS FOR???
 		todoApi.post('', formData)
 			.then((res) => { // <-- WHAT DO YOU DO AFTER CREATING
-				this.getTodos(getTodos)
+				getTodos()
 			})
 			.catch(logError)
 	}

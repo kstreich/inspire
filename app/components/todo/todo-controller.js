@@ -39,9 +39,10 @@ export default class TodoController {
 		// addTodo takes in a todo and posts it to the server
 		event.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
+		let description = event.target.todo //grabs the event data from the form
 		var formData = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
-			description: "thing to do"
+			description: description.value
 		}
 		//PASSES THE NEW TODO TO YOUR SERVICE
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
